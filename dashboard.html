@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Dashboard</title>
+  <link rel="stylesheet" href="styles/dashboard/dashboard.css">
+  <link rel="stylesheet" href="styles/dashboard/stopwatch.css">
+  <link rel="stylesheet" href="styles/dashboard/calculator.css">
+  <link rel="stylesheet" href="styles/dashboard/todo.css">
+  <link rel="stylesheet" href="styles/dashboard/pomodoro.css">
+  <script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
+  <script src="scripts/dashboard/dashboard.js" defer type="module"></script>
+  <script src="scripts/dashboard/calculator.js" defer type="module"></script>
+  <script src="scripts/dashboard/todo.js" defer type="module"></script>
+  <script src="scripts/dashboard/pomodoro.js" defer type="module"></script>
+</head>
+
+<body>
+
+  <div class="sidebar">
+    <h2>Polylearn</h2>
+    <ul>
+      <li id="pomodoro-btn"><span><i class="fas fa-clock"></i>Pomodoro</span></li>
+      <li id="todo-btn"><span><i class="fas fa-clipboard-list"></i>Todo List</span></li>
+      <li id="calculator-btn"><span><i class="fas fa-calculator"></i>Calculator</span></li>
+      <li id="notes-btn"><span><i class="fas fa-pencil-alt"></i>Notes</span></li>
+      <li id="stopwatch-btn"><span><i class="fas fa-stopwatch"></i>Stopwatch</span></li>
+      <li id="formulae-btn"><span><i class="fas fa-file-alt"></i></i>Formulae</span></li>
+    </ul>
+  </div>
+
+  <div class="main-content" id="pomodoro-content">
+    <div class="header">
+      <div class="content title">Pomodoro</div>
+      <div class="content description">This is the pomodoro technique to help you study better.</div>
+    </div>
+
+    <div class="info">
+      <div class="content">
+        <div class="label">Enable the pomodoro timer!</div>
+        <label class="pomodoro-switch">
+          <input type="checkbox">
+          <span class="slider round"></span>
+        </label>
+
+        <div class="label">Working time</div>
+        <div class="number-spinner-container">
+          <span class="next"></span>
+          <span class="prev"></span>
+          <div id="number-spinner-box">
+            <span>0</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <div class="main-content" id="todo-content">
+    <div class="header">
+      <div class="content title">Todo List</div>
+      <div class="content description">A good tool to keep track of your tasks.</div>
+    </div>
+    <div class="content">
+      <img class="background" src="assets/checklist.jpg">
+
+      <div class="all-tasks">
+        <h2 class="task-list-title">My lists</h2>
+        <ul class="task-list">
+        </ul>
+
+        <form class="todo-form create-list-form" action="">
+          <input type="text" class="new list" placeholder="New list name" aria-label="New list name" />
+          <button class="btn create create-list" aria-label="create new list" onclick="return false">+</button>
+        </form>
+      </div>
+
+      <div class="todo-list">
+        <div class="todo-header">
+          <h2 class="list-title">Title</h2>
+          <p class="task-count"><span>0</span> tasks remaining</p>
+        </div>
+
+        <div class="tasks">
+        </div>
+
+        <div class="new-task-creator">
+          <form class="todo-form create-task-form" action="">
+            <input type="text" class="new task" placeholder="New task name" aria-label="New task name" />
+            <button class="btn create create-task" aria-label="create new task" onclick="return false">+</button>
+          </form>
+        </div>
+
+        <div class="delete-stuff">
+          <button class="btn delete clear-completed-tasks">Clear completed tasks</button>
+          <button class="btn delete delete-list">Delete list</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+  </div>
+  </div>
+  </div>
+
+  <div class="main-content" id="calculator-content">
+    <div class="header">
+      <div class="content title">Calculator</div>
+      <div class="content description">A simple calculator to aid you in math.</div>
+    </div>
+    <div class="content">
+      <img class="background" src="assets/math.jpg">
+
+      <div class="calculator-grid">
+        <div class="calculator-output">
+          <div data-previous-operand class="previous-operand"></div>
+          <div data-current-operand class="current-operand"></div>
+        </div>
+        <button data-all-clear class="span-two">AC</button>
+        <button data-delete>DEL</button>
+        <button data-operation>+</button>
+        <button data-number>1</button>
+        <button data-number>2</button>
+        <button data-number>3</button>
+        <button data-operation>-</button>
+        <button data-number>4</button>
+        <button data-number>5</button>
+        <button data-number>6</button>
+        <button data-operation>×</button>
+        <button data-number>7</button>
+        <button data-number>8</button>
+        <button data-number>9</button>
+        <button data-operation>÷</button>
+        <button data-number>.</button>
+        <button data-number>0</button>
+        <button data-equals class="span-two">=</button>
+      </div>
+    </div>
+  </div>
+  </div>
+
+  <div class="main-content" id="notes-content">
+    <div class="header">
+      <div class="content title">Notes</div>
+      <div class="content description">A space for some quick notes.</div>
+    </div>
+  </div>
+
+  <div class="main-content" id="stopwatch-content">
+    <div class="header">
+      <div class="content title">Stopwatch</div>
+      <div class="content description">A simple device to help you measure time.</div>
+    </div>
+    <div class="content">
+      <img class="background" src="assets/time.jpg">
+
+      <div id="stopwatch-container">
+      </div>
+      <div id="stopwatch">
+        00:00:00
+      </div>
+
+      <ul id="stopwatch-buttons">
+        <li><button onclick="startTimer()">Start</button></li>
+        <li><button onclick="stopTimer()">Stop</button></li>
+        <li><button onclick="resetTimer()">Reset</button></li>
+        <li><button onclick="lapTime()">Lap</button></li>
+      </ul>
+
+      <div id="stopwatch-laps"></div>
+      <script src="scripts/dashboard/stopwatch.js"></script>
+    </div>
+  </div>
+  </div>
+
+  <div class="main-content" id="formulae-content">
+    <div class="header">
+      <div class="content title">Formulae</div>
+      <div class="content description">A list of formulae to help you in case you forget.</div>
+    </div>
+  </div>
+  </div>
+  </div>
+
+</body>

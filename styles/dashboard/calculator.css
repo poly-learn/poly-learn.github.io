@@ -1,0 +1,71 @@
+@import url('https://fonts.googleapis.com/css2?family=Staatliches&display=swap');
+
+.calculator-grid {
+  display: grid;
+  margin-top: -100px;
+  margin-left: 800px;
+  align-content: center;
+  min-height: 100vh;
+  grid-template-columns: repeat(4, 100px);
+  grid-template-rows: minmax(120px, auto) repeat(5, 100px);
+}
+
+.calculator-grid button {
+  cursor: pointer;
+  font-size: 2rem;
+  margin: 10px;
+  border: none;
+  border-radius: 30px;
+  outline: none;
+  background-color: rgb(255, 255, 255);
+  box-shadow: 3px 3px 5px grey;
+  transition: all 0.3;
+  font-family: 'Staatliches', sans-serif;
+}
+
+.calculator-grid button[data-all-clear] {
+  color: #f6a97c;
+}
+
+.calculator-grid button:hover {
+  background-color: rgba(224, 224, 224, 0.9);
+  transition: all 0.3;
+}
+
+.calculator-grid button:active {
+  transform: translateY(5px);
+  transition: all 0.3;
+}
+
+.span-two {
+  grid-column: span 2;
+}
+
+.calculator-output {
+  grid-column: 1 / -1;
+  background-color: rgb(93, 93, 93);
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-around;
+  flex-direction: column;
+  padding: 10px;
+  padding-right: 20px;
+  word-wrap: break-word;
+  word-break: break-all;
+  height: 100px;
+  width: 390px;
+  border-radius: 30px;
+  margin-left: 7px;
+}
+
+.calculator-output .previous-operand {
+  color: rgba(255, 255, 255, 0.75);
+  font-size: 1.5rem;
+  font-family: 'Staatliches', sans-serif;
+}
+
+.calculator-output .current-operand {
+  color: white;
+  font-size: 2.5rem;
+  font-family: 'Staatliches', sans-serif;
+}
