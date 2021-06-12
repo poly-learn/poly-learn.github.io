@@ -1,0 +1,25 @@
+body {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#game-board {
+  background-color: rgb(212, 212, 212);
+  width: 70vmin;
+  height: 70vmin;
+  display: grid;
+  grid-template-rows: repeat(20, 1fr);
+  grid-template-columns: repeat(20, 1fr);
+}
+
+.snake {
+  background-color: rgb(155, 221, 57);
+}
+
+.food {
+  background-color: rgb(255, 101, 101);
+  border: 0.25vmin solid grey;
+}
