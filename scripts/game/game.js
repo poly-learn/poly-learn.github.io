@@ -12,12 +12,14 @@ import { resetInputDir } from './input.js';
 
 let lastRenderTime = 0;
 const gameBoard = document.getElementById('game-board');
+const scoreboard = document.getElementById('score');
 
 function main(currentTime) {
   if (isDead()) {
     alert('You are dead');
     resetSnake();
     resetInputDir();
+    scoreboard.innerHTML = '0';
     draw();
   }
 
@@ -44,6 +46,8 @@ function draw() {
 }
 
 function isDead() {
+  console.log(outsideGrid(snakeBody[0]));
+  console.log(isPosOnSnake(snakeBody[0], true));
   return outsideGrid(snakeBody[0]) || isPosOnSnake(snakeBody[0], true);
 }
 

@@ -1,4 +1,5 @@
 import { isPosOnSnake, lastTailPos, snakeBody } from './snake.js';
+const scoreboard = document.getElementById('score');
 
 let food = { x: 11, y: 11 };
 const growthRate = 1;
@@ -7,6 +8,7 @@ let newSegments = 0;
 export function update() {
   if (isPosOnSnake(food)) {
     expandSnake(growthRate);
+    scoreboard.innerHTML = parseInt(scoreboard.innerHTML) + 1;
     food = getNewFoodPos();
   }
   addNewSegments();

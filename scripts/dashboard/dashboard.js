@@ -1,3 +1,5 @@
+import { setGameStatus } from "../game/input.js";
+
 const defaultTab = 'pomodoro';
 
 const buttons = [
@@ -30,6 +32,7 @@ buttons.forEach((btn) => {
     displayOnly(btn.name);
     selectOne(btn.name);
     currentTab = btn.name;
+    setGameStatus(currentTab == 'game');
   });
 });
 

@@ -2,6 +2,13 @@ let inputDir = { x: 0, y: 0 };
 let prevInputDir = { x: 0, y: 0 };
 export let isGameActive = false;
 
+export function setGameStatus(status) {
+  isGameActive = status;
+  if (!status) {
+    inputDir = { x: 0, y: 0 };
+  }
+}
+
 window.addEventListener('keydown', (event) => {
   if (!isGameActive) {
     inputDir = { x: 0, y: 0 };
