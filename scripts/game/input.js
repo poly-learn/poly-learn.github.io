@@ -1,7 +1,12 @@
 let inputDir = { x: 0, y: 0 };
 let prevInputDir = { x: 0, y: 0 };
+export let isGameActive = false;
 
 window.addEventListener('keydown', (event) => {
+  if (!isGameActive) {
+    inputDir = { x: 0, y: 0 };
+    return;
+  }
   if (event.key === 'ArrowUp' || event.key === 'w') {
     if (prevInputDir.y === 0) inputDir = { x: 0, y: -1 };
   } else if (event.key === 'ArrowDown' || event.key === 's') {

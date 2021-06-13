@@ -1,3 +1,4 @@
+import { isGameActive } from "../game/input.js";
 import { currentTab, displayOnly, selectOne } from "./dashboard.js";
 const numberSpinners = {
   working: document.querySelector('.working'),
@@ -160,8 +161,10 @@ function timerLoop(currentRenderTime) {
       if (!isCurrentlyWorking) {
         alert('It\'s time to take a rest! Games have been unlocked so you can relax!');
         gameTab.classList.remove('hidden');
+        isGameActive = true;
       } else if (isCurrentlyWorking) {
         alert('It\'s time to work!');
+        isGameActive = false;
         gameTab.classList.add('hidden');
         if (currentTab == 'game') {
           selectOne('pomodoro');
