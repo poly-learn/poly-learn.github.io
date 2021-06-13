@@ -1,4 +1,4 @@
-const defaultTab = 'pomodoro';
+const defaultTab = 'notes';
 
 const buttons = [
   { name: 'pomodoro', obj: document.getElementById('pomodoro-btn') },

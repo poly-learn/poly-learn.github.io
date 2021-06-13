@@ -13,7 +13,8 @@
   padding-left: 1.1em;
   margin-top: 60px;
 }
-.task-list-title {
+
+.notes-title {
   color: #9DADE5;
   font-size: 40px
 }
@@ -134,7 +135,9 @@
   grid-area: active;
   background: var(--clr-light);
   color: var(--clr-dark);
+  margin-top: 30px;
   margin-left: 600px;
+  margin-right: 100px
 }
 
 .todo-header {
@@ -168,6 +171,10 @@
 [type="checkbox"] {
   opacity: 0;
   position: absolute;
+}
+
+.tasks{
+  margin-top: 25px;
 }
 
 .task label {

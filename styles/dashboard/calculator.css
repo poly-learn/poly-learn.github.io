@@ -1,6 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Staatliches&display=swap');
 
 .calculator-grid {
+  position: relative;
+  right: -10%;
   display: grid;
   margin-top: -100px;
   margin-left: 800px;

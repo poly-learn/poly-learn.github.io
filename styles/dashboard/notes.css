@@ -1,0 +1,103 @@
+.notepad-title {
+  margin: 0 1em 0 0;
+  color: white;
+}
+
+.notepad-header{
+  padding: var(--spacer);
+  background: linear-gradient(160deg, #9DADE5,#ce69e2);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: -137px;
+  margin-right: 285px;
+}
+
+.notepad{
+  --spacer: 2rem;
+  grid-area: active;
+  background: var(--clr-light);
+  color: var(--clr-dark);
+  margin-left: 600px;
+  margin-right: 18px
+}
+
+.all-notes{
+  margin-top: 100px;
+  margin-left: 200px;
+}
+
+.note-title {
+  color: #9DADE5;
+  font-size: 40px
+}
+
+#notepad-area {
+  resize: none;
+  font-family: monospace;
+  font-size: 20px; 
+  margin: 15px 15px 15px 15px;
+  margin-left: 40px;
+  padding-right: 20px;
+  width: 950px;
+  height: 500px;
+  color: rgb(58, 58, 58);
+  background-color: transparent;
+  overflow: wrap;
+  border: none;
+}
+#notepad-area::-webkit-scrollbar {
+  display: none;
+}
+
+textarea:focus, input:focus{
+  outline: none;
+}
+
+.notepad-container {
+  background: linear-gradient(180deg, #9dade526, #9dade5);
+  position: relative;
+  border-radius: 30px;
+  margin-top: 30px;
+  margin-right: 285px;
+  
+}
+
+.notes-form{
+  display: flex;
+}
+
+.new.notes{
+  margin-top: 20px;
+  font-size: 1.1rem;
+}
+
+.btn.create.create-note{
+  font-size: 1.5rem;
+  font-weight: 900;
+  margin-right: 0.25em;
+  transition: opacity 250ms ease-in;
+  margin-top: 17px;
+}
+.active-note {
+  font-weight: 700;
+}
+
+.note-name {
+  cursor: pointer;
+  color: grey;
+}
+
+.note-name:hover {
+  opacity: 0.7;
+}
+
+.note-list {
+  position: absolute;
+  font-size: 1.2rem;
+  line-height: 1.7;
+  list-style: circle;
+  padding-left: 1.1em;
+  margin-top: 60px;
+}
+
