@@ -17,3 +17,7 @@ export function getInputDir() {
   prevInputDir = inputDir;
   return inputDir;
 }
+
+export function resetInputDir() {
+  inputDir = { x: 0, y: 0 };
+}

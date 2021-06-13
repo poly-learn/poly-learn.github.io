@@ -1,13 +1,22 @@
 @import url('https://fonts.googleapis.com/css2?family=Staatliches&display=swap');
 
-.calculator-grid {
+.calculator-container{
   position: relative;
   right: -10%;
   display: grid;
-  margin-top: -100px;
-  margin-left: 800px;
+  margin-top: 3%;
+  margin-left: 50%;
+  margin-right: 22.5%;
+  background: linear-gradient(0, #9dade5dd, #9dade555);
+  height: 700px;
+  border-radius: 30px;
+}
+
+.calculator-grid {
+  opacity: 1;
+  display: grid;
   align-content: center;
-  min-height: 100vh;
+  margin-left: 7%;
   grid-template-columns: repeat(4, 100px);
   grid-template-rows: minmax(120px, auto) repeat(5, 100px);
 }

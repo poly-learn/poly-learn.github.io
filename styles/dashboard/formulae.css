@@ -1,9 +1,32 @@
 .formulae-title {
     margin-left: 40px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-size: 25x;
 }
 .formulae-cat {
-    margin-left: 20px;
+    margin-left: 0px;
+    font-size: 40px;
+    margin-top: 40px;
 }
 svg {
-    margin-left: 40px;
+    margin-left: 60px;
+}
+#formulae {
+    display: block;
+}
+#maths-div {
+    width: 40%;
+    position: relative;
+    float: left;
+}
+#phy-div {
+    width: 60%;
+    position: relative;
+    margin-top: -32px;
+    float: right;
+}
+#pressure-ima-fix {
+    position: relative;
+
 }

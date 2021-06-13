@@ -3,17 +3,22 @@ import {
   draw as drawSnake,
   snakeSpeed,
   snakeBody,
-  isPosOnSnake
+  isPosOnSnake,
+  resetSnake
 } from './snake.js';
 
 import { update as updateFood, draw as drawFood } from './food.js';
+import { resetInputDir } from './input.js';
 
 let lastRenderTime = 0;
 const gameBoard = document.getElementById('game-board');
 
 function main(currentTime) {
   if (isDead()) {
-    return alert('You are dead');
+    alert('You are dead');
+    resetSnake();
+    resetInputDir();
+    draw();
   }
 
   window.requestAnimationFrame(main);

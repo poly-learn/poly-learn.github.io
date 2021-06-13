@@ -1,8 +1,12 @@
 import { getInputDir } from './input.js';
 
-export let snakeSpeed = 5;
-export const snakeBody = [{ x: 6, y: 1 }];
+export let snakeSpeed = 10;
+export let snakeBody = [{ x: 1, y: 1 }];
 export let lastTailPos = snakeBody[0];
+
+export function resetSnake() {
+  snakeBody = [{ x: 1, y: 1 }];
+}
 
 export function update() {
   const inputDir = getInputDir();

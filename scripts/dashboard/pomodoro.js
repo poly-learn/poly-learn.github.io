@@ -1,7 +1,10 @@
+import { currentTab, displayOnly, selectOne } from "./dashboard.js";
 const numberSpinners = {
   working: document.querySelector('.working'),
   resting: document.querySelector('.resting')
 };
+
+const gameTab = document.getElementById('game-btn');
 
 let currentTime = 0;
 
@@ -54,8 +57,10 @@ function drawHand() {
   ];
 
   var ctx = clockCanvas.getContext('2d');
-  ctx.strokeStyle = '#000000';
+  ctx.strokeStyle = '#666666';
+  ctx.fillStyle = '#666666';
 
+  ctx.lineWidth = 5;
   ctx.beginPath();
   ctx.moveTo(...from);
   ctx.lineTo(...to);
@@ -78,7 +83,7 @@ function drawDonut() {
   const restingRatio = getRestingTime() / (getWorkingTime() + getRestingTime());
   const ctx = clockCanvas.getContext('2d');
   ctx.strokeStyle = '#9DADE5';
-  ctx.lineWidth = 5;
+  ctx.lineWidth = 10;
   ctx.beginPath();
   ctx.arc(
     clockCanvas.width / 2,
@@ -89,7 +94,7 @@ function drawDonut() {
   );
   ctx.stroke();
   ctx.strokeStyle = '#F6A97C';
-  ctx.lineWidth = 5;
+  ctx.lineWidth = 10;
   ctx.beginPath();
   ctx.arc(
     clockCanvas.width / 2,
@@ -152,10 +157,16 @@ function timerLoop(currentRenderTime) {
     const isCurrentlyWorking = currentTime < getWorkingTime();
 
     if (isPreviouslyWorking != isCurrentlyWorking) {
-      if (isCurrentlyWorking) {
+      if (!isCurrentlyWorking) {
         alert('It\'s time to take a rest! Games have been unlocked so you can relax!');
-      } else if (!isCurrentlyWorking) {
+        gameTab.classList.remove('hidden');
+      } else if (isCurrentlyWorking) {
         alert('It\'s time to work!');
+        gameTab.classList.add('hidden');
+        if (currentTab == 'game') {
+          selectOne('pomodoro');
+          displayOnly('pomodoro');
+        }
       }
     }
 

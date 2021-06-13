@@ -1,7 +1,7 @@
 import { isPosOnSnake, lastTailPos, snakeBody } from './snake.js';
 
 let food = { x: 11, y: 11 };
-const growthRate = 5;
+const growthRate = 1;
 let newSegments = 0;
 
 export function update() {

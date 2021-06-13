@@ -24,7 +24,7 @@ let lists = [
     name: 'School',
     tasks: [
       {
-        name: 'Finish reading The Mocking Bird',
+        name: 'Finish reading to Kill a Mocking Bird',
         done: false
       },
       {
