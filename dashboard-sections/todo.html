@@ -1,0 +1,64 @@
+<section class="main-content" id="pomodoro-section">
+  <header>
+    <div class="title">Todo List</div>
+    <div class="description">A good tool to keep track of your tasks.</div>
+  </header>
+  <article>
+    <img class="background" src="assets/checklist.jpg" />
+
+    <div class="all-tasks">
+      <h2 class="task-list-title">My lists</h2>
+      <ul class="task-list"></ul>
+
+      <form class="todo-form create-list-form" action="">
+        <input
+          type="text"
+          class="new list"
+          placeholder="New list name"
+          aria-label="New list name"
+        />
+        <button
+          class="btn create create-list"
+          aria-label="create new list"
+          onclick="return false"
+        >
+          +
+        </button>
+      </form>
+    </div>
+
+    <div class="todo-list">
+      <div class="todo-header">
+        <h2 class="list-title">Title</h2>
+        <p class="task-count"><span>0</span> tasks remaining</p>
+      </div>
+
+      <div class="tasks"></div>
+
+      <div class="new-task-creator">
+        <form class="todo-form create-task-form" action="">
+          <input
+            type="text"
+            class="new task"
+            placeholder="New task name"
+            aria-label="New task name"
+          />
+          <button
+            class="btn create create-task"
+            aria-label="create new task"
+            onclick="return false"
+          >
+            +
+          </button>
+        </form>
+      </div>
+
+      <div class="delete-stuff">
+        <button class="btn delete clear-completed-tasks">
+          Clear completed tasks
+        </button>
+        <button class="btn delete delete-list">Delete list</button>
+      </div>
+    </div>
+  </article>
+</section>

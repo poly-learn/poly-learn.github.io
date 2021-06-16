@@ -1,0 +1,46 @@
+<link rel="stylesheet" href="styles/dashboard/pomodoro.css" />
+<script src="scripts/dashboard/pomodoro.js" defer type="module"></script>
+<section class="main-content" id="pomodoro-section">
+  <header>
+    <div class="title">Pomodoro timer</div>
+    <div class="description">
+      This is the pomodoro technique to help you study better.
+    </div>
+  </header>
+  <article>
+    <img class="background" src="assets/nature.jpg" />
+    <div class="pomodoro-setting">
+      <div class="label">Pause | Start</div>
+      <label class="pomodoro-switch">
+        <input type="checkbox" />
+        <span class="slider round"></span>
+      </label>
+
+      <div class="label">Working time</div>
+      <div class="number-spinner-container working" min="1" max="60">
+        <span class="next"></span>
+        <span class="prev"></span>
+        <div id="number-spinner-box">
+          <span>25</span>
+        </div>
+      </div>
+
+      <div class="label">Resting time</div>
+      <div class="number-spinner-container resting" min="1" max="30">
+        <span class="next"></span>
+        <span class="prev"></span>
+        <div id="number-spinner-box">
+          <span>5</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="pomodoro-display">
+      <div class="clock-display">
+        <button id="pomodoro-reset">Reset</button>
+        <canvas id="clock-canvas" height="500" width="500"></canvas>
+        <span id="digital-clock-display"></span>
+      </div>
+    </div>
+  </article>
+</section>

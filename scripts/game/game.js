@@ -46,8 +46,6 @@ function draw() {
 }
 
 function isDead() {
-  console.log(outsideGrid(snakeBody[0]));
-  console.log(isPosOnSnake(snakeBody[0], true));
   return outsideGrid(snakeBody[0]) || isPosOnSnake(snakeBody[0], true);
 }
 

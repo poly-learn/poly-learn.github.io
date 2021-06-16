@@ -1,0 +1,46 @@
+<section class="main-content" id="notes-section">
+  <header>
+    <div class="title">Notes</div>
+    <div class="description">A space for some quick notes.</div>
+  </header>
+  <article>
+    <img class="background" src="assets/notes.jpg" />
+
+    <div class="all-notes">
+      <h2 class="note-title">My notes</h2>
+      <ul class="note-list"></ul>
+
+      <form class="notes-form create-note-form" action="">
+        <input
+          type="text"
+          class="new notes"
+          placeholder="New note name"
+          aria-label="New note name"
+        />
+        <button
+          class="btn create create-note"
+          aria-label="create new note"
+          onclick="return false"
+        >
+          +
+        </button>
+      </form>
+    </div>
+
+    <div class="notepad">
+      <div class="notepad-header">
+        <h2 class="notepad-title">Title</h2>
+      </div>
+      <div class="notepad-container">
+        <textarea
+          id="notepad-area"
+          placeholder="Write down your notes here!"
+        ></textarea>
+      </div>
+      <div class="delete-stuff">
+        <button class="btn delete clear-notepad">Clear notepad</button>
+        <button class="btn delete delete-note">Delete note</button>
+      </div>
+    </div>
+  </article>
+</section>

@@ -1,4 +1,4 @@
-import { setGameStatus } from "../game/input.js";
+import { setGameStatus } from '../game/input.js';
 
 const defaultTab = 'pomodoro';
 
@@ -12,38 +12,51 @@ const buttons = [
   { name: 'game', obj: document.getElementById('game-btn') }
 ];
 
-const contents = {
-  pomodoro: document.getElementById('pomodoro-content'),
-  todo: document.getElementById('todo-content'),
-  calculator: document.getElementById('calculator-content'),
-  notes: document.getElementById('notes-content'),
-  stopwatch: document.getElementById('stopwatch-content'),
-  formulae: document.getElementById('formulae-content'),
-  game: document.getElementById('game-content')
+$('#pomodoro-section').load('dashboard-sections/pomodoro.html');
+$('#todo-section').load('dashboard-sections/todo.html');
+$('#calculator-section').load('dashboard-sections/calculator.html');
+$('#notes-section').load('dashboard-sections/notes.html');
+$('#stopwatch-section').load('dashboard-sections/stopwatch.html');
+$('#formulae-section').load('dashboard-sections/formulae.html');
+$('#game-section').load('dashboard-sections/game.html');
+
+const sections = {
+  pomodoro: document.getElementById('pomodoro-section'),
+  todo: document.getElementById('todo-section'),
+  calculator: document.getElementById('calculator-section'),
+  notes: document.getElementById('notes-section'),
+  stopwatch: document.getElementById('stopwatch-section'),
+  formulae: document.getElementById('formulae-section'),
+  game: document.getElementById('game-section')
 };
+
+console.log(sections);
 
 export let currentTab = defaultTab;
 
-displayOnly(defaultTab);
-selectOne(defaultTab);
+displayTab(defaultTab);
 
 buttons.forEach((btn) => {
   btn.obj.addEventListener('click', () => {
-    displayOnly(btn.name);
-    selectOne(btn.name);
+    displayTab(btn.name);
     currentTab = btn.name;
     setGameStatus(currentTab == 'game');
   });
 });
 
-export function displayOnly(name) {
-  clearAllContents();
-  contents[name].classList.remove('hidden');
+export function displayTab(name) {
+  displayOnly(name);
+  selectOne(name);
 }
 
-function clearAllContents() {
-  Object.values(contents).forEach((content) => {
-    content.classList.add('hidden');
+function displayOnly(name) {
+  clearAllsections();
+  sections[name].classList.remove('hidden');
+}
+
+function clearAllsections() {
+  Object.values(sections).forEach((section) => {
+    section.classList.add('hidden');
   });
 }
 
@@ -55,7 +68,7 @@ function deselectAll() {
     });
 }
 
-export function selectOne(name) {
+function selectOne(name) {
   deselectAll();
   buttons.find((btn) => btn.name == name).obj.classList.add('selected');
 }
